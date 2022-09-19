@@ -2,7 +2,7 @@
 
 Form::Form(std::string const & name, int sign_grade, int exec_grade): _name(name), _signed(false), _sign_grade(sign_grade), _exec_grade(exec_grade)
 {
-    std::cout << "assignment Form constructor" << std::endl;
+    std::cout << "default Form constructor" << std::endl;
     if (_sign_grade < 1 || _exec_grade < 1)
         throw Form::GradeTooLowException();
     else if (_sign_grade > 150 || _exec_grade > 150)
@@ -67,6 +67,12 @@ void Form::signForm(Bureaucrat &bureau)
         std::cout << bureau.getName() << " couldn't sign " << getName() << " because he sleep" << std::endl; 
 }
 
+void Form::execGood(Bureaucrat const & executor) const
+{
+    if (!_signed || executor.getGrade() > get_exec_grade())
+        throw Form::NotSignedException();
+    return;
+}
 
 std::ostream& operator<<(std::ostream& os, const Form& fo)
 {

@@ -2,6 +2,9 @@
 #include <iostream>
 #include <string>
 #include <exception>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -15,9 +18,10 @@ public:
     Bureaucrat &operator=(const Bureaucrat&);
     
     int         getGrade(void) const;
-   virtual std::string getName(void) const;
+    std::string getName(void) const;
     void        increment_grade(int how);
     void        decrement_grade(int how);
+    void executeForm(Form const & form);
     
     class GradeTooHighException : public std::exception
     {

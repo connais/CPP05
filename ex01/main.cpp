@@ -49,6 +49,7 @@ try
   Bureaucrat r = Bureaucrat("jobar", 150);
   Form a = Form("tu connais", 150, 12);
   a.beSigned(r);
+  a.signForm(r);
   std::cout << a;
 
 }

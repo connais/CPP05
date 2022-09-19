@@ -1,10 +1,10 @@
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp \
-Brain.cpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp \
+RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 CC = c++
 
 OBJ = $(SRC:%.cpp=./.build/%.o)
 
-NAME = animal
+NAME = bureau
 
 RM = rm -rf
 
